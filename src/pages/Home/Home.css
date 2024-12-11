@@ -1,0 +1,44 @@
+.home-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-cont img {
+    width: 550px;
+    height: 550px;
+}
+
+.home-mock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin:32px 32px;
+}
+
+.mock-int {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: aqua;
+    width: 550px;
+    height: 550px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.mock-int input {
+    padding: 32px;
+    font-size: 26px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e90ff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mock-int input:hover {
+    background-color: #da0a0a;
+}

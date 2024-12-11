@@ -1,0 +1,55 @@
+/* Container for Mock Interview Section */
+.mock-int-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  /* Heading */
+  .mock-int-heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Grid Layout for Companies */
+  .mock-int-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  /* Individual Company Card */
+  .mock-int-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .mock-int-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Company Logo */
+  .mock-int-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  /* Company Name */
+  .mock-int-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
