@@ -1,4 +1,4 @@
-import AdminApprove from "../components/AdminApprove/AdminApprove"
+import DashBoard from "../pages/DashBoard/DashBoard"
 import Home from "../pages/Home/Home"
 import Register from "../pages/Login/Register"
 import Signin from "../pages/Login/Signin"
@@ -12,4 +12,5 @@ export const routes = [
     {path:'/login',element:<Signin />},
     {path:'/MockInterviews',element:<MockInt/>},
     {path:'/MockTests',element:<MockTest/>},
+    {path:'/dashboard',element:<DashBoard/>},
   ]

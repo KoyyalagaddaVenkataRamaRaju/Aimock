@@ -89,7 +89,7 @@ function Signin() {
                             onChange={(e) => setRole(e.target.value)}
                             value={role}
                         >
-                            <option value="">Select Role</option>
+                            <option value="" disabled>Select Role</option>
                             <option value="admin">Admin</option>
                             <option value="student">Student</option>
                             <option value="other">Other</option>

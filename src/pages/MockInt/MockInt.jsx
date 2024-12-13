@@ -1,5 +1,7 @@
 import React from "react";
 import "./MockInt.css";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/footer";
 
 function MockInt() {
   const companies = [
@@ -43,6 +45,7 @@ function MockInt() {
 
   return (
     <div className="mock-int-container">
+      <Navbar/>
       <h1 className="mock-int-heading">Mock Interviews by Top Companies</h1>
       <div className="mock-int-grid">
         {companies.map((company) => (
@@ -62,6 +65,7 @@ function MockInt() {
           </a>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }

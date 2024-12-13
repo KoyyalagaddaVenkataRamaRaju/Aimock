@@ -121,6 +121,7 @@
     flex-direction:row;
     align-items: center;
     justify-content: center;  
+    gap: 20%;
   }
   .buttonSet img{
     width: 250px;
