@@ -1,0 +1,131 @@
+/* General styles */
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    background-color: #f8f9fa;
+    width: 250px;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .sidebar.closed {
+    width: 60px;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .sidebar-header .logo {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar.closed .sidebar-header .logo {
+    opacity: 0;
+    width: 0;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu li {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+  }
+  
+  .sidebar-menu li:hover {
+    background-color: #e9ecef;
+  }
+  
+  .icon {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .menu-item {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .sidebar.closed .menu-item {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+  }
+  
+  /* Hover tooltip when sidebar is closed */
+  .sidebar.closed li:hover .menu-item {
+    visibility: visible;
+    opacity: 1;
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  /* Logout button */
+  .logout-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-btn .icon {
+    margin-right: 10px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Content area */
+  .content {
+    flex: 1;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Adjust layout when sidebar is closed */
+  .sidebar-closed .content {
+    margin-left: 60px;
+  }
+  
+  .sidebar-open .content {
+    margin-left: 250px;
+  }
+  
