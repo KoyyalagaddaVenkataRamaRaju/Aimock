@@ -61,6 +61,7 @@ function MockInt() {
             target="_blank"
             rel="noopener noreferrer"
             className="mock-int-card"
+            
           >
             <img
               src={company.logo}
