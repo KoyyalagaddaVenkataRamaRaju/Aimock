@@ -9,6 +9,7 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("");
+    const [phone, setPhone] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -19,10 +20,7 @@ function Register() {
             return;
         }
 
-        const userData = { name, email, password, role };
-
-        // Debugging log to check if data is correct
-        console.log("Sending data to backend:", userData);
+        const userData = { name, email, password, role, phone };
 
         axios.post('http://localhost:5000/register', userData)
             .then(result => {
@@ -33,8 +31,8 @@ function Register() {
                 }
             })
             .catch(err => {
-                console.log('Frontend Error:', err);
-                alert("An error occurred. Please try again.");
+                console.error('Frontend Error:', err);
+                alert("Your request for admin access has been sent. Please wait for approval.");
             });
     };
 
@@ -47,9 +45,7 @@ function Register() {
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-box">
-                        <label htmlFor="name">
-                            <strong>Name</strong>
-                        </label>
+                        <label htmlFor="name"><strong>Name</strong></label>
                         <input
                             type="text"
                             placeholder="Enter Name"
@@ -60,9 +56,7 @@ function Register() {
                         />
                     </div>
                     <div className="input-box">
-                        <label htmlFor="email">
-                            <strong>Email</strong>
-                        </label>
+                        <label htmlFor="email"><strong>Email</strong></label>
                         <input
                             type="email"
                             placeholder="Enter Email"
@@ -74,9 +68,7 @@ function Register() {
                         />
                     </div>
                     <div className="input-box">
-                        <label htmlFor="password">
-                            <strong>Password</strong>
-                        </label>
+                        <label htmlFor="password"><strong>Password</strong></label>
                         <input
                             type="password"
                             placeholder="Enter Password"
@@ -88,9 +80,7 @@ function Register() {
                         />
                     </div>
                     <div className="input-box">
-                        <label htmlFor="role">
-                            <strong>Select Role</strong>
-                        </label>
+                        <label htmlFor="role"><strong>Select Role</strong></label>
                         <select
                             name="role"
                             className="form-control"
@@ -104,14 +94,21 @@ function Register() {
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <button type="submit" className="sub-btn">
-                        Register
-                    </button>
+                    <div className="input-box">
+                        <label htmlFor="phone"><strong>Phone</strong></label>
+                        <input
+                            type="text"
+                            placeholder="Enter Phone Number"
+                            name="phone"
+                            className="form-control"
+                            onChange={(e) => setPhone(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="sub-btn">Register</button>
                 </form>
                 <p>Already Have an Account?</p>
-                <Link to="/login" className="next-btn">
-                    Sign in
-                </Link>
+                <Link to="/login" className="next-btn">Sign in</Link>
             </div>
         </div>
     );
