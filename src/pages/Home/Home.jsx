@@ -59,7 +59,7 @@ const Home = () => {
       />
            </div>
            </div>
-        <div class="buttonSet">
+        <div className="buttonSet">
           <div >
             <img src="./mock4[1].jpg" alt="" />
             
