@@ -14,7 +14,7 @@ const Navbar = props => {
     <div className="main1">
       <div className='wlogo'>
         <div>
-        <Link to="/">
+        <Link to="/home">
           <img
             src=""
             alt="website logo"
@@ -28,7 +28,7 @@ const Navbar = props => {
       </div>
       <div>
         <ul className="header1">
-          <Link to="/">
+          <Link to="/home">
             <li className="list">Home </li>
           </Link>
           <Link to="/tests">
