@@ -1,6 +1,6 @@
 import {Navigate, Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import Navbar from '../../components/Navbar/Navbar'
+import Sidebar from '../../components/Sidebar/Sidebar'
 import "./Home.css"
 import Footer from '../../components/Footer/footer'
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,11 @@ const Home = () => {
 
   return (
     <div className="home">
-        <Navbar/>
+     
+      <div>
+        <Sidebar/>
+        </div>
+        <div>
         <div className="home-container">
       <div className="home-content">
         <h1 className="home-heading">Master Your Future with AI Excellence</h1>
@@ -74,7 +78,9 @@ const Home = () => {
     
         
         <Footer />
+        </div>
     </div>
+
   )
 }
 export default Home

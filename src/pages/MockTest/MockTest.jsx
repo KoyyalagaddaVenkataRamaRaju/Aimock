@@ -2,6 +2,7 @@ import React from "react";
 import "./MockTest.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/footer";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const MockTest = () => {
   const exams = [
@@ -15,16 +16,22 @@ const MockTest = () => {
 
   return (
     <div className="mock-tests-page">
-      <Navbar />
       <div className="mock-tests-container">
-        {exams.map((exam) => (
-          <div className="mock-test-card" key={exam.id}>
-            <img src={exam.img} alt={exam.name} className="mock-test-img" />
-            <button className="mock-test-button">{exam.name}</button>
+        <div className="mock-sidebar">
+          <Sidebar />
+        </div>
+        <div className="mock-tests-data">
+          <h1 className="mock-tests-heading">Mock Tests for Skill Assessment</h1>
+          <div className="mock-tests-grid">
+            {exams.map((exam) => (
+              <div key={exam.id} className="mock-test-card">
+                <img src={exam.img} alt={exam.name} className="mock-test-img" />
+                <button className="mock-test-button">{exam.name}</button>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

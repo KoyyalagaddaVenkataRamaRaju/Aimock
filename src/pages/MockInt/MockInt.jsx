@@ -46,7 +46,7 @@ function MockInt() {
 
   return (
     <div className="mock-int-container">
-      <Navbar/>
+    
       <div className="mock-int-cont">
         <div className="mock-sidebar">
           <Sidebar/>
@@ -74,7 +74,7 @@ function MockInt() {
       </div>
       </div>
       </div>
-      <Footer/>
+      
     </div>
   );
 }

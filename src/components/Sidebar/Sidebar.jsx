@@ -1,65 +1,87 @@
-import React, { useState } from 'react';
-import './Sidebar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faClipboard, faGlobe, faBook, faCompass, faCalendarAlt, faCode, faMicrophone, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import { FaHome, FaFile, FaMicrophone, FaUserAlt, FaCog, FaSignOutAlt, FaTimes, FaBars } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import "./Sidebar.css";
 
-function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const goToHome = () => {
+    navigate('/home');
+  };
+  const goToMocktest = () => {
+    navigate('/MockTests');
+  };
+  const goToMockint = () => {
+    navigate('/MockInterviews');
+  };
+  const goToProfile = () => {
+    navigate('/');
+  };
+  const goToLogout = () => {
+    navigate('/');
   };
 
   return (
-    <div className={`app-container ${isOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
-      <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
-        <div className="sidebar-header">
-          <h2 className="logo">{isOpen ? 'Logo' : 'L'}</h2>
-          <button className="toggle-btn" onClick={toggleSidebar}>
-            {isOpen ? 'X' : '☰'}
-          </button>
+    <div className={`app-container ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
+      <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
+        <div className="toggle-button" onClick={toggleSidebar}>
+          {isSidebarOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
         </div>
-        <ul className="sidebar-menu">
-          <li>
-            <FontAwesomeIcon icon={faHome} className="icon" />
-            <span className="menu-item">Dashboard</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faClipboard} className="icon" />
-            <span className="menu-item">Assessments</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faGlobe} className="icon" />
-            <span className="menu-item">Global Platform Assess...</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faBook} className="icon" />
-            <span className="menu-item">Courses</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faCompass} className="icon" />
-            <span className="menu-item">Explore</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
-            <span className="menu-item">Schedule</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faCode} className="icon" />
-            <span className="menu-item">IDE</span>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faMicrophone} className="icon" />
-            <span className="menu-item">AI Interview (new)</span>
-          </li>
-        </ul>
-        <button className="logout-btn">
-          <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
-          <span className="menu-item">Log Out</span>
-        </button>
+        {isSidebarOpen && (
+          <div>
+            <div className="logo">
+              <img src="/logoimage.png" alt="AI mock" className="logo-icon" />
+            </div>
+            <ul className="nav">
+              <li onClick={goToHome}>
+                <FaHome className="icon" size={18} fill="#4468ef" />
+                {isSidebarOpen && <span>Dashboard</span>}
+              </li>
+              <li onClick={goToMocktest}>
+                <FaFile className="icon" size={18} fill="#4468ef" />
+                {isSidebarOpen && <span>Mock Tests</span>}
+              </li>
+              <li onClick={goToMockint}>
+                <FaMicrophone className="icon" size={18} fill="#4468ef" />
+                {isSidebarOpen && <span>Mock Interviews</span>}
+              </li>
+              <li onClick={goToProfile}>
+                <FaUserAlt className="icon" size={18} fill="#4468ef" />
+                {isSidebarOpen && <span>Account</span>}
+              </li>
+              <li>
+                <FaCog className="icon" size={18} fill="#4468ef" />
+                {isSidebarOpen && <span>Settings</span>}
+              </li>
+            </ul>
+          </div>
+        )}
+        <div className="side_footer">
+          {isSidebarOpen && (
+            <>
+              <p className="profileLetter">V</p>
+              <div>
+                <span className="user-name">Role</span>
+                <span className="user-role">Student</span>
+                <FaSignOutAlt size={33} fill="#4468ef" onClick={goToLogout} />
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+      
+      {/* Main content */}
+      <div className={`main-content ${isSidebarOpen ? "expanded" : "collapsed"}`}>
+        {/* Your main content goes here */}
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;

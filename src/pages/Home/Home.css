@@ -1,3 +1,7 @@
+.home{
+  display: flex;
+  flex-direction: row;
+}
 
 .home-container {
     display: flex;
