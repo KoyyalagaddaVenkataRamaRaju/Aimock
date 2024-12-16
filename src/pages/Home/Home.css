@@ -1,6 +1,5 @@
 .home{
-  display: flex;
-  flex-direction: row;
+
 }
 
 .home-container {
@@ -127,11 +126,18 @@
     justify-content: center;  
     gap: 20%;
   }
-  .buttonSet img{
-    width: 250px;
-    height: 250px;
+  .buttonSet .img1{
+    width: 400px;
+    height: 400px;
   
   }
+  .buttonSet .img2{
+    width: 350px;
+    height: 350px;
+    margin-bottom: 55px;
+  
+  }
+
   .buttonSet  div{
     display: flex;
     flex-direction:column;
