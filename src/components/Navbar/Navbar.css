@@ -1,39 +1,112 @@
+/* Navbar main container */
 .main1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: #7e68ee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #7e68ee;
+}
+
+/* Logo and header */
+.wlogo {
+  display: flex;
+  flex-direction: row;
+}
+
+.headerimg {
+  height: 50px;
+  width: 150px;
+}
+
+.header1 {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.list {
+  color: #f8fafc;
+  font-family: Roboto;
+  font-size: 18px;
+  margin: 12px;
+  text-decoration: none;
+}
+
+.list:hover {
+  text-decoration: underline;
+}
+
+.profile-section {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown profile card */
+.profile-card {
+  position: absolute;
+  top: 50px; /* Adjust based on navbar height */
+  right: 0;
+  width: 250px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.profile-header {
+  padding: 10px 16px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.profile-option {
+  display: block;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  font-family: Roboto;
+  color: #7e68ee;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-option:hover {
+  background-color: #f5f5f5;
+  color: #6366f1;
+}
+
+.logout-button {
+  width: 100%;
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  .wlogo{
-    display: flex;
-    flex-direction: row;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .headerimg {
-    height: 50px;
-    width: 150px;
-  }
-  .header1 {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-  }
-  .list {
-    color: #f8fafc;
-    font-family: Roboto;
-    font-size: 18px;
-    margin: 12px;
-  }
-  .button1 {
-    padding: 10px;
-    background-color: #6366f1;
-    font-family: Roboto;
-    padding-left: 18px;
-    padding-right: 18px;
-    border: 0px;
-    color: #ffffff;
-    border-radius: 5px;
-  }
+}
