@@ -46,7 +46,7 @@ function Signin() {
     return (
         <div className="container-register">
             <div className="signimg">
-                <img src="./sign_img.jpg" alt="" />
+                <img src="./rb_7566.png" alt="" />
             </div>
             <div className="box-register">
                 <h2>Login</h2>
@@ -101,7 +101,7 @@ function Signin() {
                     </button>
                 </form>
                 <p>Don't Have an Account?</p>
-                <Link to="/" className="next-btn1">
+                <Link to="/register" className="next-btn1">
                     Sign Up
                 </Link>
             </div>

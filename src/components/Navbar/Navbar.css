@@ -37,8 +37,15 @@
   text-decoration: underline;
 }
 
+.nav_list{
+  margin-left: 750px;
+}
+.nav_list li{
+  padding-left: 32px;
+}
+
 .profile-section {
-  position: relative;
+  position:relative;
   display: inline-block;
   cursor: pointer;
 }

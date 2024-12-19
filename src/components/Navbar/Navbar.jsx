@@ -1,41 +1,41 @@
-import { FaUserCircle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import Cookies from 'js-cookie';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Navbar.css';
+import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import "./Navbar.css";
 
-const Navbar = props => {
+const Navbar = (props) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [userData, setUserData] = useState(null); // User data from backend
 
   const toggleProfileCard = () => {
-    setIsProfileOpen(prevState => !prevState);
+    setIsProfileOpen((prevState) => !prevState);
   };
 
   const logOutButton = () => {
-    Cookies.remove('jwt_token');
+    Cookies.remove("jwt_token");
     const { history } = props;
-    history.replace('/login');
+    history.replace("/");
   };
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const token = Cookies.get('jwt_token');
+        const token = Cookies.get("jwt_token");
         if (!token) {
           setUserData(null);
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/userdata', {
+        const response = await axios.get("http://localhost:5000/api/userdata", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
         setUserData(response.data);
       } catch (err) {
-        console.error('Error fetching user data:', err);
+        console.error("Error fetching user data:", err);
         setUserData(null);
       }
     };
@@ -48,11 +48,7 @@ const Navbar = props => {
       <div className="wlogo">
         <div>
           <Link to="/home">
-            <img
-              src=""
-              alt="website logo"
-              className="headerimg"
-            />
+            <img src="" alt="website logo" className="headerimg" />
           </Link>
         </div>
         <div>
@@ -61,7 +57,7 @@ const Navbar = props => {
           </h2>
         </div>
       </div>
-      <div>
+      <div className="nav_list">
         <ul className="header1">
           <Link to="/home">
             <li className="list">Home</li>
@@ -83,8 +79,8 @@ const Navbar = props => {
           size={36}
           onClick={toggleProfileCard}
         />
-        {isProfileOpen && (
-          userData ? (
+        {isProfileOpen &&
+          (userData ? (
             <div className="profile-card">
               <div className="profile-header">
                 <p className="profile-name">{userData.name}</p>
@@ -95,7 +91,8 @@ const Navbar = props => {
               <Link to="/settings" className="profile-option">
                 Settings
               </Link>
-              <Link to ="/login"
+              <Link
+                to="/"
                 className="profile-option logout-button"
                 onClick={logOutButton}
               >
@@ -105,12 +102,11 @@ const Navbar = props => {
           ) : (
             <div className="profile-card">
               <p>Please log in to view profile details.</p>
-              <Link to="/login" className="profile-option">
+              <Link to="/" className="profile-option">
                 <button>Login</button>
               </Link>
             </div>
-          )
-        )}
+          ))}
       </div>
     </div>
   );

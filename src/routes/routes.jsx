@@ -8,8 +8,8 @@ import MockTest from "../pages/MockTest/MockTest"
 
 export const routes = [
     {path:'/home',element:<Home/>},
-    {path:'/',element:<Register />},
-    {path:'/login',element:<Signin />},
+    {path:'/register',element:<Register />},
+    {path:'/',element:<Signin />},
     {path:'/MockInterviews',element:<MockInt/>},
     {path:'/MockTests',element:<MockTest/>},
     {path:'/dashboard',element:<DashBoard/>},

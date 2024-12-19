@@ -27,7 +27,7 @@ function Register() {
                 if (result.data === "Registration successful. Admin approval pending.") {
                     alert("Your request for admin access has been sent. Please wait for approval.");
                 } else {
-                    navigate('/login');
+                    navigate('/');
                 }
             })
             .catch(err => {
@@ -39,7 +39,7 @@ function Register() {
     return (
         <div className="container-register">
             <div className="regimg">
-                <img src="../regimg.jpg" alt="Registration" />
+                <img src="./rb_43379.png" alt="Registration" />
             </div>
             <div className="box-register">
                 <h2>Register</h2>
@@ -108,7 +108,7 @@ function Register() {
                     <button type="submit" className="sub-btn">Register</button>
                 </form>
                 <p>Already Have an Account?</p>
-                <Link to="/login" className="next-btn">Sign in</Link>
+                <Link to="/" className="next-btn">Sign in</Link>
             </div>
         </div>
     );
