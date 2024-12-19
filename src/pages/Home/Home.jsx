@@ -5,6 +5,7 @@ import "./Home.css";
 import Footer from "../../components/Footer/footer";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import UploadResume from "../../components/FileUpload/FileUpload";
 
 const Home = () => {
   const jwtToken = Cookies.get("jwt_token");
@@ -26,6 +27,9 @@ const Home = () => {
       <div>
         {/* <Sidebar/> */}
         <Navbar />
+      </div>
+      <div>
+        <UploadResume/>
       </div>
       <div>
         <div className="home-container">

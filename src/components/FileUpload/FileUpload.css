@@ -1,0 +1,65 @@
+/* Overall container for the resume upload section */
+.upload-resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  /* Title for the upload section */
+  .upload-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Container for the file upload input and button */
+  .file-upload-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the file input element */
+  .file-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Style the upload button */
+  .upload-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the uploaded resume card */
+  .resume-card {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  /* Title for the uploaded resume */
+  .resume-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Name of the uploaded resume file */
+  .resume-name {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
