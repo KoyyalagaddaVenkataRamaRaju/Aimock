@@ -22,7 +22,7 @@ function Register() {
 
         const userData = { name, email, password, role, phone };
 
-        axios.post('http://localhost:5000/register', userData)
+        axios.post('http://localhost:5001/register', userData)
             .then(result => {
                 if (result.data === "Registration successful. Admin approval pending.") {
                     alert("Your request for admin access has been sent. Please wait for approval.");

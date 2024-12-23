@@ -28,7 +28,7 @@ const Navbar = (props) => {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/api/userdata", {
+        const response = await axios.get("http://localhost:5001/api/userdata", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

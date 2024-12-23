@@ -21,7 +21,7 @@ const UploadResume = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/api/userdata", {
+        const response = await axios.get("http://localhost:5001/api/userdata", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData(response.data);
@@ -43,7 +43,7 @@ const UploadResume = () => {
   const fetchResume = async () => {
     try {
       const token = Cookies.get("jwt_token");
-      const response = await axios.get("http://localhost:5000/resume", {
+      const response = await axios.get("http://localhost:5001/resume", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -76,7 +76,7 @@ const UploadResume = () => {
       try {
         const token = Cookies.get("jwt_token");
         const response = await axios.post(
-          "http://localhost:5000/upload",
+          "http://localhost:5001/upload",
           formData,
           {
             headers: {
@@ -133,6 +133,11 @@ const UploadResume = () => {
         <div className="resume-card" onClick={handleOpenResume}>
           <h3 className="resume-title">Uploaded Resume</h3>
           <p className="resume-name">{resumeData.filename}</p>
+          <iframe
+            src={`data:${resumeData.contentType};base64,${resumeData.fileData}`}
+            title="Uploaded Resume"
+            className="resume-iframe"
+          ></iframe>
         </div>
       )}
     </div>
