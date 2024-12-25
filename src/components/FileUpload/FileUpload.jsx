@@ -115,14 +115,18 @@ const UploadResume = () => {
 
   return (
     <div className="upload-resume-container ">
-      <h2 className="upload-title">Upload Your Resume</h2>
       <div className="file-upload-container">
-        <input
-          type="file"
-          accept=".pdf,.doc,.docx"
-          onChange={handleFileChange}
-          className="file-input"
-        />
+        <h2> Upload your latest Resume</h2>
+        <label className="upload-title">
+       
+          <input
+            type="file"
+            accept=".pdf,.doc,.docx"
+            onChange={handleFileChange}
+            className="file-input"
+          />
+          
+        </label>
         <button className="upload-btn" onClick={handleUploadClick}>
           Upload Resume
         </button>
