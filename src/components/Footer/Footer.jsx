@@ -14,7 +14,6 @@ const Footer = () => {
           <ul>
             <li><a href="#about">About Us</a></li>
             <li><a href="#courses">Courses</a></li>
-            <li><a href="#membership">Membership</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
@@ -34,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 AI mock. All rights reserved.</p>
+        <p>&copy; 2024 AI-mock. All rights reserved.</p>
       </div>
     </footer>
   );
